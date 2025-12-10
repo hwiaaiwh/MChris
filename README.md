@@ -46,4 +46,4 @@ mcstatus - Made by Dinnerbone (Mojang dev), this really simplified a lot of the 
 My friend Chris - The inspiration behind the bot's name.
 
 ## License
-This project is licensed under MIT, see [LICENSE.md] for details.
+This project is licensed under MIT; see `LICENSE` for details.
