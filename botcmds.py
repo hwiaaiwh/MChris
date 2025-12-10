@@ -31,11 +31,11 @@ filedir = os.path.dirname(os.path.abspath(__file__)) + '/files'
 # shut up autocorrect stop reading my mind
 async def check_server(server:JavaServer, ip):
     status = server.status()
-    message = f'ping: {status.latency:.2f} ms\nip address: {ip}\njits online: {status.players.online}\n'
+    message = f'Ping: {status.latency:.2f} ms\nIP address: {ip}\nPlayers online: {status.players.online}\n'
     if status.players.online > 0 and status.players.online < 10:
-        message += f'- {"\n- ".join(list(i.name for i in status.players.sample))}\n'
+        message += f'- {"\n- ".join(list(f'{i.name} ({i.id})' for i in status.players.sample))}\n'
     elif status.players.online > 10:
-        message += f'- jit.'
+        message += f'- Too many to list!'
     return message
 
 # used to get the java server every time its needed
@@ -71,17 +71,17 @@ class setupcmd(commands.Cog, name='setup commands'):
                 server = JavaServer.lookup(ip, port)
                 server.status()
             except TimeoutError:
-                await ctx.send('guys the server is not on or this jit gave me the wrong address')
+                await ctx.send('Guys, either the server is currently offline or the address provided is incorrect.')
             except (ValueError, socket.gaierror):
-                await ctx.send('this jit gave me the wrong address')
+                await ctx.send('Man, the address provided is invalid.')
             except NotImplementedError:
-                await ctx.send('this jit gave me no address')
+                await ctx.send('You didn\'t give me a server address.')
             else:
                 db.add_server(ctx.guild.name, ctx.guild.id, ctx.channel.id, ip, port) # type: ignore
                 db.save_db()
-                await ctx.send('guys the server is on')
+                await ctx.send('All set up!')
         else:
-            await ctx.send('server is already setup')
+            await ctx.send('The server is already set up.')
 
     # help
     @commands.command(help='reset setup')
@@ -90,13 +90,9 @@ class setupcmd(commands.Cog, name='setup commands'):
         if ctx.guild.id in db.ids: # type: ignore
             db.rm_server(ctx.guild.id) # type: ignore
             db.save_db()
-            await ctx.send('bruh')
+            await ctx.send('This server has been reset.')
         else:
-            await ctx.send('jit i don\'t even know you')
-    
-    @resetsetup.error # type: ignore
-    async def resetsetup_handler(ctx:commands.Context,error: commands.errors.MissingPermissions):
-        await ctx.send('hey you can\'t do that')
+            await ctx.send('This server is not set up.')
 
 # query commands
 class querycmd(commands.Cog, name='query commands'):
