@@ -10,11 +10,7 @@ COPY ./botcmds.py .
 
 COPY ./requirements.txt .
 
-COPY ./files/* ./files/
-
 COPY ./.env /chrisbot
-
-COPY ./json/server.json* ./json/server.json
 
 RUN pip install -r requirements.txt
 
