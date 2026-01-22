@@ -37,7 +37,9 @@ Stop the player monitoring task
 Display the help message
 
 ## Disclaimer
-This is my first big Python project. There will be bugs. My source code has some of my grievances while development. It will be janky, but its worked on my personal server so far. Please let me know if any bugs pop up, and I will fix them when I get the time in my schedule to.
+This is my first big Python project. There will be bugs. My source code has some of my grievances while development. It will be janky, but its worked on my personal server so far. You may also have noticed that I have an aversion to proper code commenting. Bear with me, I'm too lazy to do it.
+
+Please let me know if any bugs pop up, and I will fix them when I get the time in my schedule to.
 
 ## Acknowledgements
 https://github.com/Iphex/DPMBot for the framework. If it weren't for them, I wouldn't know where to start.
