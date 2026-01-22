@@ -15,7 +15,7 @@ A simple Discord bot that allows a server or servers to check the status and pla
 4) Run `botcmds.py`, and the bot will automatically set itself up.
 
 ### Docker Install
-If you have Docker on the machine hosting the bot, you can use the Dockerfile and the provided `build.bat` or `build.sh` scripts to automatically set up your bot. (from step 3 onwards from Manual Install)
+If you have Docker on the machine hosting the bot, you can use the Dockerfile and the provided `build.bat` or `build.sh` scripts to automatically set up your bot. (You still have to do steps 1 and 2 from Manual Install)
 
 ## Commands
 `status` 
@@ -26,6 +26,7 @@ Display Minecraft server status for a specific IP address
 
 `setup [mc server address]`
 Configure the Minecraft server for this Discord server
+
 `beginquery`
 Start monitoring player join/leave events on the Minecraft server
 
@@ -36,7 +37,7 @@ Stop the player monitoring task
 Display the help message
 
 ## Disclaimer
-This is probably my first big Python project. There will be bugs. My source code has some of my grievances with this code. It will be janky, but its worked on my personal server so far. Please let me know if any bugs pop up, and I will fix them when I get the time in my college student schedule to.
+This is my first big Python project. There will be bugs. My source code has some of my grievances while development. It will be janky, but its worked on my personal server so far. Please let me know if any bugs pop up, and I will fix them when I get the time in my schedule to.
 
 ## Acknowledgements
 https://github.com/Iphex/DPMBot for the framework. If it weren't for them, I wouldn't know where to start.
