@@ -26,6 +26,7 @@ Display Minecraft server status for a specific IP address
 
 `setup [mc server address]`
 Configure the Minecraft server for this Discord server
+
 `beginquery`
 Start monitoring player join/leave events on the Minecraft server
 
